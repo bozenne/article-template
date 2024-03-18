@@ -6,7 +6,7 @@ df.data <- read.table("source/bissau.txt", header = TRUE)
 ## * process data
 
 ## ** only keep relevant columns
-df.data.red <- df.data[,c("id","fuptime","dead","bcg","dtpany","agem")]
+df.data.red <- df.data[,c("id","fuptime","dead","bcg","dtpany","age","agem")]
 
 ## ** uniformize name and format
 df.data.red$dtpany <- as.numeric(df.data.red$dtpany)
