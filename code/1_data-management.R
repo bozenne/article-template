@@ -1,17 +1,7 @@
 library(testthat)
 
-## * set path
-setwd("~/Github/article-template")
-  
-## if(Sys.info()["login"] == "mycomputer1"){
-##   setwd("~/Github/article-template")
-## }else if(Sys.info()["login"] == "mycomputer2"){
-##   setwd("~/article-template")
-## }
-
-
 ## * load data
-df.data <- read.table(file.path("source","bissau.txt"), header = TRUE)
+df.data <- read.table("source/bissau.txt", header = TRUE)
 
 ## * process data
 
@@ -38,5 +28,7 @@ expect_true(all(df.data.red$dtp %in% 0:1)) ## bcg is a binary variable
 expect_true(all(df.data.red$time>0)) ## time variable is strictly positive
 
 ## * export
-write.csv(df.data.red, file = file.path("data","bissau-processed.csv"), row.names = FALSE)
-write.csv(dfC.data.red, file = file.path("data","bissau-aggregated.csv"), row.names = FALSE)
+if("export" %in% ls() && export){
+    write.csv(df.data.red, file = "data/data-bissau-processed.csv", row.names = FALSE)
+    write.csv(dfC.data.red, file = "data/data-bissau-aggregated.csv", row.names = FALSE)
+}

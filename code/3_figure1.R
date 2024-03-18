@@ -1,17 +1,7 @@
 library(ggplot2)
 
-## * set path
-setwd("~/Github/article-template")
-
-## if(Sys.info()["login"] == "mycomputer1"){
-##   setwd("~/Github/article-template")
-## }else if(Sys.info()["login"] == "mycomputer2"){
-##   setwd("~/article-template")
-## }
-export <- FALSE
-
 ## * load data
-df.data <- read.csv("data/bissau-processed.csv")
+df.data <- read.csv("data/data-bissau-processed.csv")
 
 ## * prepare figure
 df.data0 <- df.data
@@ -31,7 +21,7 @@ figure1 <- figure1 + theme(text = element_text(size=15),
 figure1
 
 ## * export figure
-if(export){
-    ggsave(figure1, filename = file.path("figures","figure1.pdf"), width = 5, height = 5)
-    ggsave(figure1, filename = file.path("figures","figure1.png"), width = 5, height = 5)
+if("export" %in% ls() && export){
+    ggsave(figure1, filename = "figures/figure1.pdf", width = 7, height = 7)
+    ggsave(figure1, filename = "figures/figure1.png", width = 7, height = 7)
 }
