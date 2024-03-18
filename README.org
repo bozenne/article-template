@@ -1,6 +1,6 @@
 Structure of the repository for reproducing the results of the article .........:
 - =source=: original data (=bissau.txt=)
-- =data=: processed data (=data-......=) and intermediate results from the analysis (=analysis-......=)
+- =data=: processed data (=data-......csv=) and intermediate results from the analysis (=analysis-......csv=)
   + =data-bissau-processed.csv=: used for the analysis
   + =data-bissau-aggregated.csv=: not used for the analysis but exported for another project
 - =tables=: tables in =docx= format.
